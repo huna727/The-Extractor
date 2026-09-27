@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>The Extractor</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>The Extractor</h1>
+    <p class="sub">Bundle this page into a zip an AI can use to build an extension for it.</p>
+  </header>
+
+  <main>
+    <label class="row">
+      <input type="checkbox" id="includeStorage" />
+      <span>Include localStorage / sessionStorage <strong>values</strong> (off by default — may contain tokens)</span>
+    </label>
+    <label class="row">
+      <input type="checkbox" id="includeScreenshot" checked />
+      <span>Include a screenshot of the visible page</span>
+    </label>
+
+    <button id="extractBtn">Extract This Site</button>
+
+    <div id="status" class="status"></div>
+  </main>
+
+  <footer>
+    <span id="hostname"></span>
+  </footer>
+
+  <script src="lib/zip.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

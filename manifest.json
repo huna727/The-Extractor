@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "The Extractor",
+  "version": "1.0.0",
+  "description": "Extracts a website's HTML, CSS, scripts, DOM structure and screenshot into a single zip file — built for feeding to an AI so it can help you build a browser extension for that site.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "The Extractor"
+  },
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
